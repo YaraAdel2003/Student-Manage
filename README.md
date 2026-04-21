@@ -1,27 +1,142 @@
-# StudentManagement
+# Student Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+An Angular 16 project built for the ITI assignment to practice core Angular concepts through a simple student management application.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This application allows users to:
 
-## Code scaffolding
+- View all students in a table
+- Add a new student using a form
+- Delete a student from the list
+- Open a student details page
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project demonstrates the Angular features required in the assignment, including routing, services, `BehaviorSubject`, `Observable`, async pipe, `@Input`, `@Output`, structural directives, and template binding.
 
-## Build
+## Built With
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular 16
+- TypeScript
+- RxJS
+- Bootstrap 5
 
-## Running unit tests
+## Application Routes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- `/home` - Welcome page
+- `/students` - Students table
+- `/add-student` - Add student form
+- `/student/:id` - Student details page
 
-## Running end-to-end tests
+## Main Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Shared student data managed through `StudentsService`
+- Student list updates automatically after adding or deleting a record
+- Parent-child communication between `StudentsComponent` and `StudentTableComponent`
+- Template-driven form using `FormsModule`
+- Responsive UI with Bootstrap and custom styling
 
-## Further help
+## Project Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```text
+src/app
+|-- features
+|   |-- home
+|   |-- notfound
+|   |-- students
+|       |-- add-student
+|       |-- student-details
+|       |-- student-table
+|       |-- students
+|-- models
+|   |-- student.model.ts
+|-- services
+|   |-- students.service.ts
+|-- shared
+|   |-- components
+|       |-- navbar
+```
+
+## Angular Concepts Used
+
+- Interpolation
+- Property binding
+- Event binding
+- `*ngFor`
+- `*ngIf`
+- Angular routing
+- Services
+- `BehaviorSubject`
+- `Observable`
+- Async pipe
+- `@Input`
+- `@Output`
+
+## How To Run
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm start
+```
+
+3. Open the browser at:
+
+```text
+http://localhost:4200/
+```
+
+## Useful Commands
+
+Run the development server:
+
+```bash
+npm start
+```
+
+Build the project:
+
+```bash
+npm run build
+```
+
+Run tests:
+
+```bash
+npm test
+```
+
+## Verification Notes
+
+- TypeScript app compilation was checked with `tsconfig.app.json`
+- Spec compilation was checked with `tsconfig.spec.json`
+- On this machine, `ng build` reached bundle generation and then failed with a local Windows `spawn EPERM` environment error, which appears environment-related rather than a source-code issue
+
+## Sample Student Fields
+
+Each student record includes:
+
+- `id`
+- `firstName`
+- `lastName`
+- `age`
+- `gender`
+- `email`
+- `phone`
+- `address`
+- `city`
+- `country`
+- `department`
+- `level`
+- `GPA`
+- `enrollmentDate`
+- `isActive`
+
+## Author
+
+Prepared as part of the Angular Student Management assignment.

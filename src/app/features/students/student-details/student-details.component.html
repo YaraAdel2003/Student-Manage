@@ -1,0 +1,74 @@
+<section class="container py-5">
+  <ng-container *ngIf="student; else notFound">
+    <div class="details-card">
+      <div class="details-header">
+        <div>
+          <span class="eyebrow">Student Details</span>
+          <h1>{{ student.firstName }} {{ student.lastName }}</h1>
+          <p>
+            {{ student.department }} • Level {{ student.level }} • GPA
+            {{ student.GPA }}
+          </p>
+        </div>
+
+        <span class="status-badge" [class.inactive]="!student.isActive">
+          {{ student.isActive ? 'Active' : 'Inactive' }}
+        </span>
+      </div>
+
+      <div class="details-grid">
+        <div class="detail-item">
+          <span>ID</span>
+          <strong>{{ student.id }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Age</span>
+          <strong>{{ student.age }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Gender</span>
+          <strong>{{ student.gender }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Email</span>
+          <strong>{{ student.email }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Phone</span>
+          <strong>{{ student.phone }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Department</span>
+          <strong>{{ student.department }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Address</span>
+          <strong>{{ student.address }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>City</span>
+          <strong>{{ student.city }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Country</span>
+          <strong>{{ student.country }}</strong>
+        </div>
+        <div class="detail-item">
+          <span>Enrollment Date</span>
+          <strong>{{ student.enrollmentDate }}</strong>
+        </div>
+      </div>
+
+      <a routerLink="/students" class="btn btn-outline-primary">Back to Students</a>
+    </div>
+  </ng-container>
+
+  <ng-template #notFound>
+    <div class="details-card">
+      <span class="eyebrow">Student Details</span>
+      <h1>Student not found</h1>
+      <p>The requested record does not exist in the current student list.</p>
+      <a routerLink="/students" class="btn btn-primary">Return to Students</a>
+    </div>
+  </ng-template>
+</section>

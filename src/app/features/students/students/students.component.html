@@ -1,0 +1,20 @@
+<section class="students-page container py-5">
+  <div class="hero-card">
+    <div>
+      <span class="eyebrow">Students Page</span>
+      <h1>Manage your student records in one place</h1>
+      <p>
+        Browse the current list, open full details for any student, or remove a
+        record instantly. New entries added from the form appear here
+        automatically through the shared service.
+      </p>
+    </div>
+
+    <a routerLink="/add-student" class="btn btn-primary px-4">Add Student</a>
+  </div>
+
+  <app-student-table
+    [students]="students$ | async"
+    (deleteStudent)="deleteStudent($event)"
+  ></app-student-table>
+</section>
