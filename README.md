@@ -91,6 +91,70 @@ npm start
 http://localhost:4200/
 ```
 
+## Deployment to GitHub Pages
+
+### Prerequisites
+
+- A GitHub account
+- Git installed on your machine
+- The project initialized as a Git repository
+
+### Setup Instructions
+
+1. **Create a GitHub Repository**
+   - Go to [GitHub](https://github.com) and create a new repository named `student-management`
+   - Do not initialize with README (we already have one)
+
+2. **Install Dependencies** (if not already done):
+
+```bash
+npm install
+```
+
+3. **Deploy to GitHub Pages**
+
+Run the deployment command:
+
+```bash
+npm run deploy
+```
+
+This command will:
+
+- Build the project in production mode
+- Deploy the dist folder to the `gh-pages` branch
+
+4. **Enable GitHub Pages**
+   - Go to your repository Settings
+   - Navigate to "Pages" section
+   - Select `gh-pages` branch as the source
+   - Save
+
+5. **Access Your App**
+   - Your app will be available at: `https://yourusername.github.io/student-management/`
+
+### First-Time Setup with GitHub
+
+If this is your first time pushing to GitHub:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit: Student Management System"
+git branch -M main
+git remote add origin https://github.com/yourusername/student-management.git
+git push -u origin main
+npm run deploy
+```
+
+### Subsequent Deployments
+
+After the initial setup, any future deployments just require:
+
+```bash
+npm run deploy
+```
+
 ## Useful Commands
 
 Run the development server:
